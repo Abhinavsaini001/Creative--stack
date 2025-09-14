@@ -6,6 +6,7 @@ import Portfolio from "./Portfolio";
 import WhyClientsTrust from "./WhyClientsTrust";
 import ContactSection from "./ContactSection";
 import Testimonial from "./Testimonial";
+import OurTeam from "./OurTeam";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       <Portfolio />
       <WhyClientsTrust />
       <Testimonial />
+      <OurTeam/>
       <ContactSection />
     </>
   );

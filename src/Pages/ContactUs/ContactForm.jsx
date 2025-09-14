@@ -1,95 +1,73 @@
 import React from "react";
+import Bitmap from "../../assets/bitmap.png"; // adjust path based on your folder structure
 
-const ContactUs = () => {
+const ContactForm = () => {
   return (
-    <div className="bg-gray-50 py-12">
-      <div className="max-w-6xl mx-auto bg-white shadow-lg rounded-2xl overflow-hidden grid md:grid-cols-2">
-        
-        {/* Left Side - Contact Info */}
-        <div className="bg-blue-600 text-white p-10 flex flex-col justify-between">
-          <div>
-            <h2 className="text-2xl font-bold mb-3">Contact Information</h2>
-            <p className="text-gray-200">Say something to start a live chat!</p>
+    <section
+      className="relative w-full h-screen"
+      style={{
+        backgroundImage: `url(${Bitmap})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      {/* Overlay */}
+      <div className="absolute inset-0  bg-opacity-20"></div>
 
-            <ul className="mt-6 space-y-4">
-              <li className="flex items-center gap-3">
-                <span className="text-lg">📞</span> +1 012 3456 789
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="text-lg">📧</span> demo@gmail.com
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="text-lg">📍</span> 132 Dartmouth Street Boston, MA 02156 USA
-              </li>
-            </ul>
-          </div>
-
-          {/* Social Icons */}
-          <div className="flex gap-4 mt-8">
-            <a href="#" className="w-10 h-10 flex items-center justify-center rounded-full bg-white text-blue-600 hover:bg-gray-200 transition">
-              <i className="fab fa-twitter"></i>
-            </a>
-            <a href="#" className="w-10 h-10 flex items-center justify-center rounded-full bg-white text-blue-600 hover:bg-gray-200 transition">
-              <i className="fab fa-instagram"></i>
-            </a>
-            <a href="#" className="w-10 h-10 flex items-center justify-center rounded-full bg-white text-blue-600 hover:bg-gray-200 transition">
-              <i className="fab fa-linkedin"></i>
-            </a>
-          </div>
-        </div>
-
-        {/* Right Side - Form */}
-        <div className="p-10">
-          <h2 className="text-2xl font-bold mb-2">Contact Us</h2>
-          <p className="text-gray-600 mb-6">Any question or remarks? Just write us a message!</p>
-
-          <form className="space-y-4">
-            <div className="grid grid-cols-2 gap-4">
-              <input
-                type="text"
-                placeholder="First Name"
-                className="p-3 rounded-lg shadow-sm focus:shadow-md focus:outline-blue-500 transition"
-              />
-              <input
-                type="text"
-                placeholder="Last Name"
-                className="p-3 rounded-lg shadow-sm focus:shadow-md focus:outline-blue-500 transition"
-              />
-            </div>
-            <div className="grid grid-cols-2 gap-4">
+      {/* Contact Form Box */}
+      <div className="relative z-10 flex items-center justify-start h-full px-6 md:px-20">
+        <div className="bg-white rounded-lg shadow-lg p-8 w-full max-w-lg">
+          <form className="space-y-6">
+            {/* Email */}
+            <div>
+              <label className="block text-gray-700 mb-2">Your Email</label>
               <input
                 type="email"
-                placeholder="Email"
-                className="p-3 rounded-lg shadow-sm focus:shadow-md focus:outline-blue-500 transition"
-              />
-              <input
-                type="tel"
-                placeholder="+1 012 3456 789"
-                className="p-3 rounded-lg shadow-sm focus:shadow-md focus:outline-blue-500 transition"
+                placeholder="Enter your email"
+                className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black"
               />
             </div>
-            <select className="w-full p-3 rounded-lg shadow-sm focus:shadow-md focus:outline-blue-500 transition">
-              <option>General Inquiry</option>
-              <option>Support</option>
-              <option>Sales</option>
-              <option>Feedback</option>
-            </select>
-            <textarea
-              placeholder="Write your message..."
-              className="w-full p-3 rounded-lg shadow-sm focus:shadow-md focus:outline-blue-500 h-28 transition"
-            ></textarea>
+
+            {/* Subject */}
+            <div>
+              <label className="block text-gray-700 mb-2">Subject</label>
+              <select className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black">
+                <option>Select Subject</option>
+                <option>General Inquiry</option>
+                <option>Support</option>
+                <option>Feedback</option>
+              </select>
+            </div>
+
+            {/* Message */}
+            <div>
+              <label className="block text-gray-700 mb-2">Message</label>
+              <textarea
+                rows="4"
+                placeholder="Write your message"
+                className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black"
+              ></textarea>
+            </div>
+
+            {/* Button */}
             <button
-              type="submit"
-              className="w-full bg-black text-white py-3 rounded-lg hover:bg-blue-600 transition"
+              type="button"
+              className="bg-black text-white px-6 py-2 rounded hover:bg-gray-900 transition"
             >
-              Send Message
+              SUBMIT NOW
             </button>
           </form>
         </div>
-
       </div>
-    </div>
+
+      {/* Location Pin (Right side) */}
+      <div className="absolute right-[30%] top-1/2 transform -translate-y-1/2 z-20">
+        <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center text-white text-lg">
+          📍
+        </div>
+      </div>
+    </section>
   );
 };
 
-export default ContactUs;
+export default ContactForm;
