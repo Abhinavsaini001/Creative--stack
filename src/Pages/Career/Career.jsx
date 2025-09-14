@@ -1,11 +1,17 @@
+import Testimonial from "../Home/Testimonial";
+import ApplyForm from "./ApplyForm";
+import CareerJob from "./CareerJob";
 import HeroSection from "./HeroSection";
-import ProjectCard from "./ProjectCard";
+import InternshipSection from "./InternshipSection";
 
 const Career = () => {
   return (
     <div>
-    <HeroSection/>
-      <ProjectCard />
+      <HeroSection/>
+      <InternshipSection/>
+      <CareerJob/>
+      <Testimonial/>
+      <ApplyForm/>
     </div>
   );
 };
