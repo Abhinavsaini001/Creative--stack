@@ -45,21 +45,43 @@ const ContactUs = () => {
 
           <form className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
-              <input type="text" placeholder="First Name" className="border p-3 rounded-lg focus:outline-blue-500" />
-              <input type="text" placeholder="Last Name" className="border p-3 rounded-lg focus:outline-blue-500" />
+              <input
+                type="text"
+                placeholder="First Name"
+                className="p-3 rounded-lg shadow-sm focus:shadow-md focus:outline-blue-500 transition"
+              />
+              <input
+                type="text"
+                placeholder="Last Name"
+                className="p-3 rounded-lg shadow-sm focus:shadow-md focus:outline-blue-500 transition"
+              />
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <input type="email" placeholder="Email" className="border p-3 rounded-lg focus:outline-blue-500" />
-              <input type="tel" placeholder="+1 012 3456 789" className="border p-3 rounded-lg focus:outline-blue-500" />
+              <input
+                type="email"
+                placeholder="Email"
+                className="p-3 rounded-lg shadow-sm focus:shadow-md focus:outline-blue-500 transition"
+              />
+              <input
+                type="tel"
+                placeholder="+1 012 3456 789"
+                className="p-3 rounded-lg shadow-sm focus:shadow-md focus:outline-blue-500 transition"
+              />
             </div>
-            <select className="w-full border p-3 rounded-lg focus:outline-blue-500">
+            <select className="w-full p-3 rounded-lg shadow-sm focus:shadow-md focus:outline-blue-500 transition">
               <option>General Inquiry</option>
               <option>Support</option>
               <option>Sales</option>
               <option>Feedback</option>
             </select>
-            <textarea placeholder="Write your message..." className="w-full border p-3 rounded-lg focus:outline-blue-500 h-28"></textarea>
-            <button type="submit" className="w-full bg-black text-white py-3 rounded-lg hover:bg-blue-600 transition">
+            <textarea
+              placeholder="Write your message..."
+              className="w-full p-3 rounded-lg shadow-sm focus:shadow-md focus:outline-blue-500 h-28 transition"
+            ></textarea>
+            <button
+              type="submit"
+              className="w-full bg-black text-white py-3 rounded-lg hover:bg-blue-600 transition"
+            >
               Send Message
             </button>
           </form>
