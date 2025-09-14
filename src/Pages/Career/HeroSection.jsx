@@ -7,7 +7,7 @@ const HeroSection = () => {
       <div className="max-w-4xl mx-auto">
         {/* Heading */}
         <h1 className="text-4xl md:text-4xl font-bold text-black mb-6">
-          Kickstart Your Career with Our Paid Internship Program
+          Careers & Build Digital Solutions with Us
         </h1>
 
         {/* Subheading */}
