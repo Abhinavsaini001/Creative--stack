@@ -22,6 +22,16 @@ const Portfolio = () => {
       tags: ["Landing Page", "UI & UX"],
     },
     {
+      image: project3,
+      title: "Go where You feel most Alive",
+      tags: ["Landing Page", "UI & UX"],
+    },
+    {
+      image: project3,
+      title: "Go where You feel most Alive",
+      tags: ["Landing Page", "UI & UX"],
+    },
+    {
       image: project4,
       title: "Space Ready For Work",
       tags: ["Landing Page", "UI & UX"],
@@ -33,13 +43,13 @@ const Portfolio = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Section Heading */}
         <div className="text-center mb-14">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+          <h2 className="text-3xl font-bold text-gray-900 mb-12">
             Our Work Speaks for Itself
           </h2>
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {projects.map((project, index) => (
             <div
               key={index}
