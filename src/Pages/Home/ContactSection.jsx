@@ -1,4 +1,5 @@
 import React from "react";
+import map from "../../assets/map.png"; // ✅ Import image properly
 
 const ContactSection = () => {
   return (
@@ -20,22 +21,22 @@ const ContactSection = () => {
             <input
               type="text"
               placeholder="Name"
-              className="w-full border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full rounded-xl px-4 py-3 shadow-md focus:outline-none focus:ring-2 focus:ring-purple-500"
             />
             <input
               type="email"
               placeholder="Email"
-              className="w-full border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full rounded-xl px-4 py-3 shadow-md focus:outline-none focus:ring-2 focus:ring-purple-500"
             />
             <input
               type="text"
               placeholder="Subject"
-              className="w-full border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full rounded-xl px-4 py-3 shadow-md focus:outline-none focus:ring-2 focus:ring-purple-500"
             />
             <textarea
               rows="5"
               placeholder="Message"
-              className="w-full border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full rounded-xl px-4 py-3 shadow-md focus:outline-none focus:ring-2 focus:ring-purple-500"
             ></textarea>
             <button className="px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-blue-500 text-white font-semibold shadow-md hover:opacity-90 transition">
               Send Message
@@ -44,38 +45,8 @@ const ContactSection = () => {
 
           {/* Right World Map */}
           <div className="relative">
-            {/* Map image (transparent dots style) */}
-            <img
-              src="https://i.ibb.co/0j1Zq3j/world-map.png"
-              alt="World map"
-              className="w-full object-contain"
-            />
-
-            {/* Flags with labels */}
-            <div className="absolute top-16 left-10 bg-white px-3 py-2 rounded-xl shadow text-sm font-medium flex items-center space-x-2">
-              <span className="text-xl">🇩🇪</span>
-              <span>Germany</span>
-            </div>
-
-            <div className="absolute top-20 right-24 bg-white px-3 py-2 rounded-xl shadow text-sm font-medium flex items-center space-x-2">
-              <span className="text-xl">🇦🇺</span>
-              <span>Australia</span>
-            </div>
-
-            <div className="absolute bottom-20 left-24 bg-white px-3 py-2 rounded-xl shadow text-sm font-medium flex items-center space-x-2">
-              <span className="text-xl">🇧🇷</span>
-              <span>Brazil</span>
-            </div>
-
-            <div className="absolute top-36 left-1/2 bg-white px-3 py-2 rounded-xl shadow text-sm font-medium flex items-center space-x-2">
-              <span className="text-xl">🇵🇰</span>
-              <span>Pakistan</span>
-            </div>
-
-            <div className="absolute bottom-16 right-16 bg-white px-3 py-2 rounded-xl shadow text-sm font-medium flex items-center space-x-2">
-              <span className="text-xl">🇨🇦</span>
-              <span>Canada</span>
-            </div>
+            {/* Map Image */}
+            <img src={map} alt="World map" className="w-full object-contain" />
           </div>
         </div>
       </div>

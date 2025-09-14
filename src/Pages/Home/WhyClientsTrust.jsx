@@ -42,9 +42,11 @@ const WhyClientsTrust = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="p-6 bg-white shadow-md rounded-2xl border hover:shadow-lg transition"
+              className="p-6 rounded-2xl shadow-lg hover:shadow-2xl transition bg-white"
             >
-              <div className="flex justify-center mb-4">{feature.icon}</div>
+              <div className="flex justify-center items-center w-16 h-16 mx-auto mb-6 rounded-full bg-purple-100">
+                {feature.icon}
+              </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
                 {feature.title}
               </h3>
