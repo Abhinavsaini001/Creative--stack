@@ -11,13 +11,14 @@ import ContactUs from "./Pages/ContactUs/ContactUs";
 import Header from "./Component/Header";
 import Footer from "./Component/Footer";
 import Portfolio from "./Pages/Portfolio/Portfolio";
+import CursorFollower from "./Component/CursorFollower";
 
 function App() {
   return (
     <Router>
       {/* Header */}
       <Header />
-
+      <CursorFollower />
       {/* Main Content with padding (fix navbar overlap) */}
       <div className="pt-20">
         <Routes>

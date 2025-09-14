@@ -29,8 +29,8 @@ const Features = () => {
   return (
     <section className="py-20 bg-white">
       {/* Heading */}
-      <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">
-        Why We're Different
+      <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
+       Features That Define Us
       </h2>
 
       {/* Features Layout */}

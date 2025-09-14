@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="bg-black text-white px-6 py-12 md:px-20">
       {/* Logo Section */}
-      <div className="text-center text-2xl font-bold mb-10">Creative Stack</div>
+      <div className="text-center text-2xl font-bold mb-10">Creative Stack✨</div>
 
       <hr className="border-gray-700 mb-10" />
 

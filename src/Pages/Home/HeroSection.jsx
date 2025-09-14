@@ -1,5 +1,5 @@
 import React from "react";
-import heroImg from "../../assets/hero-bg.jpg"; // apna image path yaha daalo
+import heroImg from "../../assets/hero-bg.svg"; // apna image path yaha daalo
 
 const HeroSection = () => {
   return (
