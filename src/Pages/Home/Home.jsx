@@ -5,6 +5,7 @@ import Services from "./Services";
 import Portfolio from "./Portfolio";
 import WhyClientsTrust from "./WhyClientsTrust";
 import ContactSection from "./ContactSection";
+import Testimonial from "./Testimonial";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <Services />
       <Portfolio />
       <WhyClientsTrust />
+      <Testimonial />
       <ContactSection />
     </>
   );
