@@ -8,7 +8,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="text-2xl font-bold text-white tracking-wide">
-          CREATIVE <span className="text-blue-400">STACK</span>
+          CREATIVE <span className="text-blue-400">STACK ✨</span>
         </Link>
 
         {/* Links */}
@@ -19,6 +19,14 @@ const Navbar = () => {
               className="cursor-pointer hover:text-blue-400 transition"
             >
               Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/portfolio"
+              className="cursor-pointer hover:text-blue-400 transition"
+            >
+              Portfolio
             </Link>
           </li>
           <li>
