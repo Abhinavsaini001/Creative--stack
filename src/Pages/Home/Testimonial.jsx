@@ -31,8 +31,11 @@ const Testimonial = () => {
       <div className="text-center mb-10">
         <p className="text-sm text-[#000000] uppercase mb-2">Testimonials</p>
         <h2 className="text-3xl font-bold text-black">
-          What My Clients Are Saying
+          What Our Clients Are Saying
         </h2>
+        <p className="text-gray-500 mt-3 max-w-xl mx-auto">
+            Our clients love our work in websites, apps & SEO. We deliver solutions that drive results.
+          </p>
       </div>
 
       <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-6">

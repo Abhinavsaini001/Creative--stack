@@ -13,11 +13,11 @@ const features = [
   },
   {
     icon: <FaUsers className="text-3xl text-white" />,
-    title: "User-friendly Interface",
+    title: "User-Friendly",
   },
   {
     icon: <FaShieldAlt className="text-3xl text-white" />,
-    title: "Secure and Reliable",
+    title: "Secure & Reliable",
   },
   {
     icon: <FaRocket className="text-3xl text-white" />,

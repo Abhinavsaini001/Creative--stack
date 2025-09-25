@@ -6,22 +6,22 @@ const services = [
   {
     icon: <FaMobileAlt className="text-3xl text-purple-600" />,
     title: "Mobile App Development",
-    desc: "iOS, Android, Hybrid solutions tailored to your needs.",
+    desc: "We create responsive websites, e-commerce platforms, and iOS/Android apps tailored to your business needs.",
   },
   {
     icon: <FaLaptopCode className="text-3xl text-purple-600" />,
-    title: "Website Development",
-    desc: "Responsive, E-commerce, Business & Portfolio websites.",
+    title: "Software & Business Solutions",
+    desc: "From custom software to scalable business apps, we deliver secure and high-performance solutions for startups & enterprises.",
   },
   {
     icon: <FaCogs className="text-3xl text-purple-600" />,
-    title: "Software Solutions",
-    desc: "ERP, CRM, and custom business applications.",
+    title: "UI/UX & Creative Design",
+    desc: "Modern, user-friendly designs that improve customer experience, drive engagement, and boost conversions.",
   },
   {
     icon: <FaPencilRuler className="text-3xl text-purple-600" />,
-    title: "UI/UX Design",
-    desc: "Creative and user-friendly interface designs.",
+    title: "SEO & Digital Growth",
+    desc: "Enhance your online presence with SEO, SEM, and digital marketing strategies designed to increase visibility and sales.",
   },
 ];
 

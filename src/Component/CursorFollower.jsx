@@ -16,7 +16,7 @@ export default function CursorFollower() {
 
     let lastX = 0;
     let lastY = 0;
-    const speedFactor = 0.0011; // ~1.5 second follow
+    const speedFactor = 0.11; // ~1.5 second follow
 
     const animate = () => {
       lastX += (cursorRef.current.x - lastX) * speedFactor;

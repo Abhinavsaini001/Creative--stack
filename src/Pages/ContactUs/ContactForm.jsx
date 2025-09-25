@@ -1,5 +1,5 @@
 import React from "react";
-import Bitmap from "../../assets/bitmap.png"; // adjust path based on your folder structure
+import Bitmap from "../../assets/bitmap.png";
 
 const ContactForm = () => {
   return (

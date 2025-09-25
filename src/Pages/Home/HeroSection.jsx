@@ -1,5 +1,5 @@
 import React from "react";
-import heroImg from "../../assets/hero-bg.svg"; // apna image path yaha daalo
+import heroImg from "../../assets/hero-bg.webp"; // apna image path yaha daalo
 
 const HeroSection = () => {
   return (
@@ -16,17 +16,22 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 max-w-3xl px-6">
         <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
-          Custom Software & Web Solutions in Any Language – Built Just for You
+          Custom Software & Web Solutions – Built Just for You
         </h1>
         <p className="text-lg md:text-xl mb-8 text-gray-200">
-          We design professional websites & apps tailored to your business. Also
-          offering paid internships for future tech leaders.
+          We design websites, apps & SEO solutions tailored for your business. Also offering real-world internships for students.
         </p>
         <div className="flex flex-col md:flex-row gap-4 justify-center">
           <button className="px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-full text-white font-medium transition">
             Get Your Project Started
           </button>
-          <button className="px-6 py-3 bg-transparent border border-blue-400 hover:bg-blue-500 hover:text-white rounded-full text-blue-400 font-medium transition">
+          <button
+            onClick={() => {
+              const formSection = document.getElementById("apply-form");
+              formSection?.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="px-6 py-3 bg-transparent border border-blue-400 hover:bg-blue-500 hover:text-white rounded-full text-blue-400 font-medium transition"
+          >
             Apply for Internship
           </button>
         </div>
