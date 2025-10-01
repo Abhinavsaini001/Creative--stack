@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import emailjs from "emailjs-com";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ApplyForm = () => {
   const [formData, setFormData] = useState({
@@ -19,14 +22,67 @@ const ApplyForm = () => {
     }
   };
 
+  const validateForm = () => {
+    const { fullName, email, phone, role } = formData;
+
+    if (!fullName || !email || !phone || !role) {
+      toast.error("Please fill in all required fields!");
+      return false;
+    }
+
+    const phoneRegex = /^[0-9]{10}$/;
+    if (!phoneRegex.test(phone)) {
+      toast.error("Phone number must be exactly 10 digits!");
+      return false;
+    }
+
+    return true;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form Submitted:", formData);
-    alert("Application Submitted Successfully!");
+
+    if (!validateForm()) return;
+
+    const templateParams = {
+      fullName: formData.fullName,
+      email: formData.email,
+      phone: formData.phone,
+      role: formData.role,
+      message: formData.message,
+    };
+
+    emailjs
+      .send(
+        "service_3y8u7gl",
+        "template_0y9ldee",
+        templateParams,
+        "SsHji3zoQhx2CpzQj"
+      )
+      .then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          toast.success("Form Submitted Successfully! 🎉");
+
+          setFormData({
+            fullName: "",
+            email: "",
+            phone: "",
+            role: "",
+            message: "",
+            resume: null,
+          });
+        },
+        (error) => {
+          console.log("FAILED...", error);
+          toast.error("Something went wrong. Please try again.");
+        }
+      );
   };
 
   return (
-    <section className="bg-[#fdf8f6] py-12 px-6">
+    <section id="apply-form" className="bg-[#fdf8f6] py-12 px-6">
+      <ToastContainer position="top-right" autoClose={3000} />
       <div className="max-w-4xl mx-auto text-center mb-8">
         <h2 className="text-2xl font-bold text-black">Didn't Find a Match?</h2>
         <p className="text-gray-700">
@@ -38,12 +94,10 @@ const ApplyForm = () => {
         <h3 className="text-xl font-semibold text-black mb-6">Send Us Your Resume</h3>
 
         <form onSubmit={handleSubmit} className="space-y-6">
-          {/* Name & Email */}
+          {/* Full Name & Email */}
           <div className="grid md:grid-cols-2 gap-6">
             <div>
-              <label className="block text-sm font-medium text-black mb-1">
-                Full Name *
-              </label>
+              <label className="block text-sm font-medium text-black mb-1">Full Name *</label>
               <input
                 type="text"
                 name="fullName"
@@ -55,9 +109,7 @@ const ApplyForm = () => {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-black mb-1">
-                Email Address *
-              </label>
+              <label className="block text-sm font-medium text-black mb-1">Email Address *</label>
               <input
                 type="email"
                 name="email"
@@ -73,9 +125,7 @@ const ApplyForm = () => {
           {/* Phone & Role */}
           <div className="grid md:grid-cols-2 gap-6">
             <div>
-              <label className="block text-sm font-medium text-black mb-1">
-                Phone Number *
-              </label>
+              <label className="block text-sm font-medium text-black mb-1">Phone Number *</label>
               <input
                 type="tel"
                 name="phone"
@@ -87,9 +137,7 @@ const ApplyForm = () => {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-black mb-1">
-                Role Interested In *
-              </label>
+              <label className="block text-sm font-medium text-black mb-1">Role Interested In *</label>
               <select
                 name="role"
                 value={formData.role}
@@ -99,6 +147,7 @@ const ApplyForm = () => {
               >
                 <option value="">Select a role</option>
                 <option value="Frontend Developer Intern">Frontend Developer Intern</option>
+                <option value="Full Stack Developer Intern">Full Stack Developer Intern</option>
                 <option value="UI/UX Designer Intern">UI/UX Designer Intern</option>
                 <option value="Digital Marketing Intern">Digital Marketing Intern</option>
               </select>
@@ -107,9 +156,7 @@ const ApplyForm = () => {
 
           {/* Message */}
           <div>
-            <label className="block text-sm font-medium text-black mb-1">
-              Message (Optional)
-            </label>
+            <label className="block text-sm font-medium text-black mb-1">Message (Optional)</label>
             <textarea
               name="message"
               value={formData.message}
@@ -120,25 +167,6 @@ const ApplyForm = () => {
             ></textarea>
           </div>
 
-          {/* Upload Resume */}
-          <div>
-            <label className="block text-sm font-medium text-black mb-1">
-              Upload Resume
-            </label>
-            <input
-              type="file"
-              name="resume"
-              onChange={handleChange}
-              className="w-full text-black"
-              accept=".pdf,.doc,.docx"
-              required
-            />
-            <p className="text-gray-500 text-sm mt-1">
-              Accepted formats: PDF, DOC, DOCX (Max 5MB)
-            </p>
-          </div>
-
-          {/* Submit Button */}
           <div className="text-center">
             <button
               type="submit"

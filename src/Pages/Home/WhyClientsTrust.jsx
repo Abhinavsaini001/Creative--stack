@@ -4,25 +4,25 @@ import { CheckCircle, Users, Package, Award } from "lucide-react";
 const features = [
   {
     icon: <Package className="w-8 h-8 text-purple-600" />,
-    title: "Huge collection",
+    title: "Wide range of digital services",
     description:
       "A collection of 890 unique Nerkos built to go beyond the digital space.",
   },
   {
     icon: <CheckCircle className="w-8 h-8 text-purple-600" />,
-    title: "High quality",
+    title: "High-quality & scalable solutions",
     description:
       "The Nerkos collection includes dozens of rare costumes and colorways of artists.",
   },
   {
     icon: <Award className="w-8 h-8 text-purple-600" />,
-    title: "Top resource",
+    title: "Expert designers & developers",
     description:
       "Tasty design resources made with care for each pixel. NFTs and game resources.",
   },
   {
     icon: <Users className="w-8 h-8 text-purple-600" />,
-    title: "Big community",
+    title: "Trusted by businesses worldwide",
     description:
       "Be part of a community of Nerko owners and create user generated items.",
   },

@@ -43,9 +43,12 @@ const Portfolio = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Section Heading */}
         <div className="text-center mb-14">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-5">
             Our Work Speaks for Itself
           </h2>
+          <p className="text-gray-500 mt-3 max-w-xl mx-auto">
+            From web & app projects to creative UI/UX designs, our portfolio reflects innovation and performance across industries.
+          </p>
         </div>
 
         {/* Projects Grid */}
