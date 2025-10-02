@@ -1,10 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";  // ✅ Add this
 import project1 from "../../assets/project1.png";
 import project2 from "../../assets/project2.png";
 import project3 from "../../assets/project3.png";
 import project4 from "../../assets/project4.png";
 
 const Portfolio = () => {
+  const navigate = useNavigate(); // ✅ Navigation hook
+
   const projects = [
     {
       image: project1,
@@ -92,7 +95,10 @@ const Portfolio = () => {
 
         {/* View Collection Button */}
         <div className="text-center mt-14">
-          <button className="px-8 py-3 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 text-white font-semibold shadow-md hover:opacity-90 transition">
+          <button
+            onClick={() => navigate("/portfolio")}  // ✅ Route to Portfolio Page
+            className="px-8 py-3 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 text-white font-semibold shadow-md hover:opacity-90 transition"
+          >
             View collection →
           </button>
         </div>

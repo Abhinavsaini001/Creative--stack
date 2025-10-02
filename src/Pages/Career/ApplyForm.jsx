@@ -41,7 +41,6 @@ const ApplyForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     if (!validateForm()) return;
 
     const templateParams = {
@@ -54,16 +53,14 @@ const ApplyForm = () => {
 
     emailjs
       .send(
-        "service_3y8u7gl",
-        "template_0y9ldee",
+        "service_3y8u7gl", 
+        "template_0y9ldee", 
         templateParams,
         "SsHji3zoQhx2CpzQj"
       )
       .then(
-        (response) => {
-          console.log("SUCCESS!", response.status, response.text);
+        () => {
           toast.success("Form Submitted Successfully! 🎉");
-
           setFormData({
             fullName: "",
             email: "",
@@ -73,8 +70,7 @@ const ApplyForm = () => {
             resume: null,
           });
         },
-        (error) => {
-          console.log("FAILED...", error);
+        () => {
           toast.error("Something went wrong. Please try again.");
         }
       );
@@ -85,14 +81,9 @@ const ApplyForm = () => {
       <ToastContainer position="top-right" autoClose={3000} />
       <div className="max-w-4xl mx-auto text-center mb-8">
         <h2 className="text-2xl font-bold text-black">Didn't Find a Match?</h2>
-        <p className="text-gray-700">
-          Send us your resume and we'll keep you in mind for future opportunities.
-        </p>
       </div>
 
       <div className="max-w-4xl mx-auto bg-white shadow-md rounded-xl p-8">
-        <h3 className="text-xl font-semibold text-black mb-6">Send Us Your Resume</h3>
-
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Full Name & Email */}
           <div className="grid md:grid-cols-2 gap-6">
@@ -104,7 +95,7 @@ const ApplyForm = () => {
                 value={formData.fullName}
                 onChange={handleChange}
                 placeholder="Enter your full name"
-                className="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#3B82F6]"
+                className="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
               />
             </div>
@@ -116,7 +107,7 @@ const ApplyForm = () => {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Enter your email"
-                className="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#3B82F6]"
+                className="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
               />
             </div>
@@ -132,7 +123,7 @@ const ApplyForm = () => {
                 value={formData.phone}
                 onChange={handleChange}
                 placeholder="Enter your phone number"
-                className="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#3B82F6]"
+                className="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
               />
             </div>
@@ -142,7 +133,7 @@ const ApplyForm = () => {
                 name="role"
                 value={formData.role}
                 onChange={handleChange}
-                className="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#3B82F6]"
+                className="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
               >
                 <option value="">Select a role</option>
@@ -161,16 +152,17 @@ const ApplyForm = () => {
               name="message"
               value={formData.message}
               onChange={handleChange}
-              placeholder="Tell us about yourself, your experience, and why you'd like to join..."
+              placeholder="Tell us about yourself..."
               rows="4"
-              className="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#3B82F6]"
+              className="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             ></textarea>
           </div>
 
+          {/* Submit */}
           <div className="text-center">
             <button
               type="submit"
-              className="w-full bg-[#3B82F6] text-white font-semibold py-3 rounded-lg hover:bg-blue-600 transition"
+              className="w-full bg-blue-500 text-white font-semibold py-3 rounded-lg hover:bg-blue-600 transition"
             >
               Send Application
             </button>

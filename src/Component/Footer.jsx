@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="bg-black text-white px-6 py-12 md:px-20">
       {/* Logo Section */}
-      <div className="text-center text-2xl font-bold mb-10">Creative Stack✨</div>
+      <div className="text-center text-2xl font-bold mb-10">STACKADDA✨</div>
 
       <hr className="border-gray-700 mb-10" />
 
@@ -15,16 +15,16 @@ const Footer = () => {
         <div className="space-y-4">
           <h3 className="font-semibold text-lg">Reach us</h3>
           <div className="flex items-start">
-            <span className="mr-3">📞</span>
-            <p>+1012 3456 789</p>
+            {/* <span className="mr-3">📞</span> */}
+            {/* <p>+1012 3456 789</p> */}
           </div>
           <div className="flex items-start">
             <span className="mr-3">✉️</span>
-            <p>demo@gmail.com</p>
+            <p>stackadda@gmail.com</p>
           </div>
           <div className="flex items-start">
             <span className="mr-3">📍</span>
-            <p>132 Dartmouth Street Boston, Massachusetts 02156 United States</p>
+            <p>Pattandur Agrahara, Whitefield, Bengaluru, Karnataka 560066, India</p>
           </div>
         </div>
 

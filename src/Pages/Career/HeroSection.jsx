@@ -1,7 +1,6 @@
-// src/components/HeroSection.jsx
 import React from "react";
 
-const HeroSection = () => {
+const HeroSection = ({ scrollToForm }) => {
   return (
     <section className="bg-white w-full py-20 px-6 md:px-20 text-center">
       <div className="max-w-4xl mx-auto">
@@ -20,7 +19,10 @@ const HeroSection = () => {
 
         {/* Button */}
         <div className="flex justify-center">
-          <button className="bg-[#3B82F6] text-white font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-blue-600 transition duration-300">
+          <button
+            onClick={scrollToForm} 
+            className="bg-[#3B82F6] text-white font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-blue-600 transition duration-300"
+          >
             Apply Now
           </button>
         </div>
