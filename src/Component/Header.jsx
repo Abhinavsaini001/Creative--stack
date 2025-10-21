@@ -1,167 +1,120 @@
 // src/components/Navbar.jsx
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import {
+  FiHome,
+  FiBriefcase,
+  FiSend,
+  FiTrendingUp,
+  FiMenu,
+  FiX,
+} from "react-icons/fi";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const closeMenu = () => setIsMenuOpen(false);
 
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
-
-  // Close menu when clicking outside
+  // Close menu on click outside
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (isMenuOpen && !event.target.closest('.mobile-menu-container')) {
+      if (
+        isMenuOpen &&
+        !event.target.closest(".mobile-menu-container") &&
+        !event.target.closest(".menu-toggle-button")
+      ) {
         setIsMenuOpen(false);
       }
     };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isMenuOpen]);
 
-  // Prevent body scroll when menu is open
+  // Disable scroll when menu is open
   useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
+    document.body.style.overflow = isMenuOpen ? "hidden" : "unset";
+    return () => (document.body.style.overflow = "unset");
   }, [isMenuOpen]);
 
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full z-50 bg-black/90 shadow-lg border-b border-black/30">
-        <div className="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
+      {/* NAVBAR */}
+      <nav className="fixed top-0 left-0 w-full z-50 bg-black/90 shadow-lg border-b border-black/30 backdrop-blur-md">
+        <div className="max-w-7xl mx-auto px-6 py-6 md:py-6 flex justify-between items-center">
           {/* Logo */}
-          <Link to="/" className="text-2xl font-bold text-white tracking-wide">
-            CREATIVE <span className="text-blue-400">STACK ✨</span>
+          <Link
+            to="/"
+            className="text-3xl font-extrabold text-white tracking-wide"
+          >
+            STACK <span className="text-blue-400">ADDA ✨</span>
           </Link>
 
-          {/* Desktop Links */}
-          <ul className="hidden md:flex gap-10 text-white text-lg">
-            <li>
-              <Link
-                to="/"
-                className="cursor-pointer hover:text-blue-400 transition"
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/portfolio"
-                className="cursor-pointer hover:text-blue-400 transition"
-              >
-                Portfolio
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/career"
-                className="cursor-pointer hover:text-blue-400 transition"
-              >
-                Career
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/contact"
-                className="cursor-pointer hover:text-blue-400 transition"
-              >
-                Contact
-              </Link>
-            </li>
+          {/* Desktop Menu */}
+          <ul className="hidden md:flex gap-12 text-white text-lg font-medium">
+            {[
+              { name: "Home", path: "/" },
+              { name: "Portfolio", path: "/portfolio" },
+              { name: "Career", path: "/career" },
+              { name: "Contact", path: "/contact" },
+            ].map((item) => (
+              <li key={item.name}>
+                <Link
+                  to={item.path}
+                  className="hover:text-blue-400 transition-colors duration-200"
+                >
+                  {item.name}
+                </Link>
+              </li>
+            ))}
           </ul>
 
-          {/* Mobile Menu Toggle Button */}
+          {/* Mobile Hamburger */}
           <button
             onClick={toggleMenu}
-            className="md:hidden text-white text-2xl cursor-pointer focus:outline-none mobile-menu-container relative z-60"
+            className="md:hidden text-white text-3xl cursor-pointer focus:outline-none menu-toggle-button"
             aria-label="Toggle menu"
           >
-            {isMenuOpen ? "✕" : "☰"}
+            {isMenuOpen ? <FiX /> : <FiMenu />}
           </button>
         </div>
       </nav>
 
-      {/* Mobile Menu Card Overlay */}
+      {/* MOBILE MENU */}
       {isMenuOpen && (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 md:hidden animate-fadeIn">
-          {/* Card Menu */}
-          <div className="mobile-menu-container fixed top-24 right-6 bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-2xl shadow-2xl p-6 w-72 animate-slideIn">
-            {/* Menu Header */}
-            <div className="text-white text-sm font-semibold mb-4 pb-3 border-b border-gray-800">
-              MENU
-            </div>
-            
-            {/* Menu Links */}
-            <ul className="flex flex-col space-y-2">
-              <li>
-                <Link
-                  to="/"
-                  onClick={closeMenu}
-                  className="flex items-center px-4 py-3 text-white hover:bg-blue-400/20 hover:text-blue-400 rounded-lg transition-all duration-200 group"
-                >
-                  <span className="mr-3 text-xl">🏠</span>
-                  <span className="font-medium">Home</span>
-                  <span className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity">→</span>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/portfolio"
-                  onClick={closeMenu}
-                  className="flex items-center px-4 py-3 text-white hover:bg-blue-400/20 hover:text-blue-400 rounded-lg transition-all duration-200 group"
-                >
-                  <span className="mr-3 text-xl">💼</span>
-                  <span className="font-medium">Portfolio</span>
-                  <span className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity">→</span>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/career"
-                  onClick={closeMenu}
-                  className="flex items-center px-4 py-3 text-white hover:bg-blue-400/20 hover:text-blue-400 rounded-lg transition-all duration-200 group"
-                >
-                  <span className="mr-3 text-xl">🚀</span>
-                  <span className="font-medium">Career</span>
-                  <span className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity">→</span>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/contact"
-                  onClick={closeMenu}
-                  className="flex items-center px-4 py-3 text-white hover:bg-blue-400/20 hover:text-blue-400 rounded-lg transition-all duration-200 group"
-                >
-                  <span className="mr-3 text-xl">📧</span>
-                  <span className="font-medium">Contact</span>
-                  <span className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity">→</span>
-                </Link>
-              </li>
+          <div className="mobile-menu-container fixed top-28 right-6 bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-2xl shadow-2xl p-6 w-72 animate-slideIn">
+            <ul className="flex flex-col space-y-3">
+              {[
+                { name: "Home", icon: <FiHome />, path: "/" },
+                { name: "Portfolio", icon: <FiBriefcase />, path: "/portfolio" },
+                { name: "Career", icon: <FiTrendingUp />, path: "/career" },
+                { name: "Contact", icon: <FiSend />, path: "/contact" },
+              ].map((link) => (
+                <li key={link.name}>
+                  <Link
+                    to={link.path}
+                    onClick={closeMenu}
+                    className="flex items-center px-4 py-3 text-white hover:bg-blue-400/20 hover:text-blue-400 rounded-lg transition-all duration-200 group"
+                  >
+                    <span className="mr-3 text-xl">{link.icon}</span>
+                    <span className="font-medium">{link.name}</span>
+                    <span className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity">
+                      →
+                    </span>
+                  </Link>
+                </li>
+              ))}
             </ul>
 
-            {/* Footer */}
-            <div className="mt-6 pt-4 border-t border-gray-800">
-              <p className="text-gray-400 text-xs text-center">
-                Navigate through our site
-              </p>
-            </div>
+            <p className="text-gray-400 text-xs text-center mt-6">
+              Navigate through our site
+            </p>
           </div>
         </div>
       )}
 
-      {/* Add these styles to your global CSS or create a style tag */}
+      {/* Animations */}
       <style jsx>{`
         @keyframes fadeIn {
           from {
@@ -171,7 +124,6 @@ const Navbar = () => {
             opacity: 1;
           }
         }
-
         @keyframes slideIn {
           from {
             opacity: 0;
@@ -182,11 +134,9 @@ const Navbar = () => {
             transform: translateY(0) scale(1);
           }
         }
-
         .animate-fadeIn {
           animation: fadeIn 0.2s ease-out;
         }
-
         .animate-slideIn {
           animation: slideIn 0.3s ease-out;
         }
