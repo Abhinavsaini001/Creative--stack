@@ -50,9 +50,9 @@ const Portfolio = () => {
             Our Work Speaks for Itself
           </h2>
           <p className="text-gray-500 mt-3 max-w-xl mx-auto">
-            From e-commerce stores to mobile apps and SEO-focused websites — our
-            portfolio showcases our expertise across Shopify, WordPress, React,
-            Flutter, and React Native.
+            From e-commerce stores to mobile apps and SEO-focused websites —
+            our portfolio showcases our expertise across Shopify, WordPress,
+            React, Flutter, and React Native.
           </p>
         </div>
 
@@ -68,7 +68,6 @@ const Portfolio = () => {
                 alt={project.title}
                 className="w-full h-60 object-cover"
               />
-
               <div className="p-6 space-y-4">
                 <h3 className="text-xl font-semibold text-gray-900">
                   {project.title}
@@ -92,13 +91,13 @@ const Portfolio = () => {
           ))}
         </div>
 
-        {/* View Collection Button */}
+        {/* ✅ View Collection Button (Navigate to Portfolio Page) */}
         <div className="text-center mt-14">
           <button
             onClick={() => navigate("/portfolio")}
             className="px-8 py-3 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 text-white font-semibold shadow-md hover:opacity-90 transition"
           >
-            View collection →
+            View Collection →
           </button>
         </div>
       </div>

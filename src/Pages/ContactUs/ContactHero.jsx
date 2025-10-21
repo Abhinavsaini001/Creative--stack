@@ -1,7 +1,7 @@
 // src/components/ContactHero.jsx
 import React from "react";
 
-const ContactHero = () => {
+const ContactHero = ({scrollToForm}) => {
   return (
     <section className="bg-white text-black py-24 text-center">
       <div className="max-w-3xl mx-auto px-4">
@@ -18,7 +18,9 @@ const ContactHero = () => {
 
         {/* CTA Button */}
         <div className="flex justify-center">
-          <button className="bg-[#3B82F6] text-white font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-blue-600 transition duration-300">
+          <button
+          onClick={scrollToForm}
+          className="bg-[#3B82F6] text-white font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-blue-600 transition duration-300">
             Contact Us
           </button>
         </div>

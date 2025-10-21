@@ -1,7 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"; // ✅ Import useNavigate
 import x from "../../assets/x.svg"; // apna image path yaha daalo
 
 const HeroSection = () => {
+  const navigate = useNavigate(); // ✅ Initialize navigate
+
   return (
     <section className="relative min-h-[120vh] flex items-center justify-center text-center text-white overflow-hidden">
       {/* Background Image */}
@@ -19,14 +22,20 @@ const HeroSection = () => {
           Custom Software & Web Solutions – Built Just for You
         </h1>
         <p className="text-lg md:text-xl mb-8 text-gray-200">
-          We design websites, apps & SEO solutions tailored for your business. Also offering real-world internships for students.
+          We design websites, apps & SEO solutions tailored for your business.
+          Also offering real-world internships for students.
         </p>
+
         <div className="flex flex-col md:flex-row gap-4 justify-center">
-          <button 
-          onClick={() => navigate("/contact")}
-          className="px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-full text-white font-medium transition">
+          {/* ✅ Navigate to Contact Page */}
+          <button
+            onClick={() => navigate("/contact")}
+            className="px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-full text-white font-medium transition"
+          >
             Get Your Project Started
           </button>
+
+          {/* ✅ Navigate to Career Page */}
           <button
             onClick={() => navigate("/career")}
             className="px-6 py-3 bg-transparent border border-blue-400 hover:bg-blue-500 hover:text-white rounded-full text-blue-400 font-medium transition"

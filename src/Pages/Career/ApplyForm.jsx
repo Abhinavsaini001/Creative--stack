@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 const ApplyForm = () => {
   const [formData, setFormData] = useState({
@@ -12,6 +10,7 @@ const ApplyForm = () => {
     message: "",
     resume: null,
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
@@ -24,18 +23,13 @@ const ApplyForm = () => {
 
   const validateForm = () => {
     const { fullName, email, phone, role } = formData;
-
     if (!fullName || !email || !phone || !role) {
-      toast.error("Please fill in all required fields!");
       return false;
     }
-
     const phoneRegex = /^[0-9]{10}$/;
     if (!phoneRegex.test(phone)) {
-      toast.error("Phone number must be exactly 10 digits!");
       return false;
     }
-
     return true;
   };
 
@@ -43,6 +37,8 @@ const ApplyForm = () => {
     e.preventDefault();
 
     if (!validateForm()) return;
+
+    setIsSubmitting(true);
 
     const templateParams = {
       fullName: formData.fullName,
@@ -60,29 +56,29 @@ const ApplyForm = () => {
         "SsHji3zoQhx2CpzQj"
       )
       .then(
-        (response) => {
-          console.log("SUCCESS!", response.status, response.text);
-          toast.success("Form Submitted Successfully! 🎉");
-
-          setFormData({
-            fullName: "",
-            email: "",
-            phone: "",
-            role: "",
-            message: "",
-            resume: null,
-          });
+        () => {
+          // simulate submission delay
+          setTimeout(() => {
+            setFormData({
+              fullName: "",
+              email: "",
+              phone: "",
+              role: "",
+              message: "",
+              resume: null,
+            });
+            setIsSubmitting(false);
+          }, 1500);
         },
-        (error) => {
-          console.log("FAILED...", error);
-          toast.error("Something went wrong. Please try again.");
+        () => {
+          // submission failed
+          setIsSubmitting(false);
         }
       );
   };
 
   return (
     <section id="apply-form" className="bg-[#fdf8f6] py-12 px-6">
-      <ToastContainer position="top-right" autoClose={3000} />
       <div className="max-w-4xl mx-auto text-center mb-8">
         <h2 className="text-2xl font-bold text-black">Didn't Find a Match?</h2>
         <p className="text-gray-700">
@@ -167,12 +163,23 @@ const ApplyForm = () => {
             ></textarea>
           </div>
 
+          {/* Submit Button with Loader */}
           <div className="text-center">
             <button
               type="submit"
-              className="w-full bg-[#3B82F6] text-white font-semibold py-3 rounded-lg hover:bg-blue-600 transition"
+              disabled={isSubmitting}
+              className={`w-full bg-[#3B82F6] text-white font-semibold py-3 rounded-lg hover:bg-blue-600 transition flex items-center justify-center gap-2 ${
+                isSubmitting ? "opacity-80 cursor-not-allowed" : ""
+              }`}
             >
-              Send Application
+              {isSubmitting ? (
+                <>
+                  <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                  Sending...
+                </>
+              ) : (
+                "Send Application"
+              )}
             </button>
           </div>
         </form>

@@ -2,32 +2,38 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Linkedin } from "lucide-react";
 
+// Import team images from your src/assets folder
+import Emma from "../../assets/team/dev1.jpg";
+import James from "../../assets/team/dev2.jpg";
+import Sophia from "../../assets/team/dev3.jpg";
+import Liam from "../../assets/team/dev4.jpg";
+
 const teamMembers = [
   {
     name: "Emma Davis",
     role: "UI/UX Designer",
-    img: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z2lybHN8ZW58MHx8MHx8fDA%3D",
+    img: Emma,
     description:
       "Emma crafts beautiful and user-friendly interfaces, ensuring every interaction feels effortless.",
   },
   {
     name: "James Miller",
     role: "Frontend Developer",
-    img: "https://images.unsplash.com/photo-1615109398623-88346a601842?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWFufGVufDB8fDB8fHww",
+    img: James,
     description:
       "James builds smooth, responsive, and scalable web experiences with React and Tailwind.",
   },
   {
     name: "Sophia Brown",
     role: "Backend Developer",
-    img: "https://images.unsplash.com/photo-1586351012965-861624544334?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Z2lybHxlbnwwfHwwfHx8MA%3D%3D",
+    img: Sophia,
     description:
       "Sophia ensures our backend systems are fast, reliable, and secure using modern technologies.",
   },
   {
     name: "Liam Johnson",
     role: "SEO Specialist",
-    img: "https://images.unsplash.com/photo-1604004555489-723a93d6ce74?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGdpcmx8ZW58MHx8MHx8fDA%3D",
+    img: Liam,
     description:
       "Liam helps our content shine online by optimizing visibility and engagement through SEO.",
   },
@@ -46,7 +52,7 @@ const TeamSection = () => {
         <p className="text-gray-600 mb-6 md:mb-8 text-sm sm:text-base">
           These individuals are the heart and soul of our products.
         </p>
-        <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full transition-all text-sm sm:text-base">
+        <button className="px-8 py-3 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 text-white font-semibold shadow-md hover:opacity-90 transition">
           Join our team
         </button>
       </div>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const CareerJob = () => {
+const CareerJob = ({scrollToForm}) => {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   const categories = ["All", "Design", "Development", "Marketing", "Admin"];
@@ -85,7 +85,9 @@ const CareerJob = () => {
                 <p className="flex items-center text-gray-600 text-sm">
                   ⏰ {job.type}
                 </p>
-                <button className="mt-4 w-full bg-[#3B82F6] text-white py-2 rounded-lg hover:bg-blue-600">
+                <button
+                onClick={scrollToForm}
+                className="mt-4 w-full bg-[#3B82F6] text-white py-2 rounded-lg hover:bg-blue-600">
                   Apply Now
                 </button>
               </div>
