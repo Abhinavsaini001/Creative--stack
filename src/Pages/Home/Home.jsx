@@ -7,19 +7,22 @@ import WhyClientsTrust from "./WhyClientsTrust";
 import ContactSection from "./ContactSection";
 import Testimonial from "./Testimonial";
 import OurTeam from "./OurTeam";
+import SEO from "../../Component/SEO";
 
 const Home = () => {
   return (
     <>
+      <SEO
+        title="Creative Stack - Portfolio"
+        description="Explore our React, WordPress, Flutter, and SEO projects."
+      />
       <HeroSection />
-      
       <Services />
       <Portfolio />
-      
       <WhyClientsTrust />
-      <Features />
       <Testimonial />
-      <OurTeam/>
+      <Features />
+      <OurTeam />
       <ContactSection />
     </>
   );

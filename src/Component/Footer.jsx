@@ -16,15 +16,15 @@ const Footer = () => {
           <h3 className="font-semibold text-lg">Reach us</h3>
           <div className="flex items-start">
             <span className="mr-3">📞</span>
-            <p>+1012 3456 789</p>
+            <p>+91 8077073053</p>
           </div>
           <div className="flex items-start">
             <span className="mr-3">✉️</span>
-            <p>demo@gmail.com</p>
+            <p>stackadda@gmail.com</p>
           </div>
           <div className="flex items-start">
             <span className="mr-3">📍</span>
-            <p>132 Dartmouth Street Boston, Massachusetts 02156 United States</p>
+            <p>StackAdda , No 123, 2nd Floor, 70th Cross, 5th Block, Rajaji Nagara, Bengaluru, Karnataka 560010</p>
           </div>
         </div>
 

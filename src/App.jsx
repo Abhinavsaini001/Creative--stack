@@ -1,37 +1,38 @@
 // src/App.jsx
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async"; 
 
 // Pages
 import Home from "./Pages/Home/Home";
 import Career from "./Pages/Career/Career";
 import ContactUs from "./Pages/ContactUs/ContactUs";
+import Portfolio from "./Pages/Portfolio/Portfolio";
 
 // Components
 import Header from "./Component/Header";
 import Footer from "./Component/Footer";
-import Portfolio from "./Pages/Portfolio/Portfolio";
 import CursorFollower from "./Component/CursorFollower";
 
 function App() {
   return (
-    <Router>
-      {/* Header */}
-      <Header />
-      <CursorFollower />
-      {/* Main Content with padding (fix navbar overlap) */}
-      <div className="pt-20">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/career" element={<Career />} />
-          <Route path="/contact" element={<ContactUs />} />
-        </Routes>
-      </div>
+    <HelmetProvider> 
+      <Router>
+        <Header />
+        <CursorFollower />
 
-      {/* Footer */}
-      <Footer />
-    </Router>
+        <div className="pt-20">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/career" element={<Career />} />
+            <Route path="/contact" element={<ContactUs />} />
+          </Routes>
+        </div>
+
+        <Footer />
+      </Router>
+    </HelmetProvider>
   );
 }
 

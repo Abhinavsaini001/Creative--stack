@@ -1,85 +1,92 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 
-const Testimonial = () => {
-  const testimonials = [
-    {
-      name: "Graham Griffiths",
-      role: "Twitor",
-      message:
-        "Outsource your digital marketing efforts, instead of handling in-house. They can provide your business with a variety.",
-      image: "https://randomuser.me/api/portraits/men/32.jpg",
-    },
-    {
-      name: "Alan Martí",
-      role: "Meta Inc.",
-      message:
-        "A digital agency is a business you hire to outsource your digital marketing efforts, instead of handling in-house. They can provide your business with a variety of digital solutions.",
-      image: "https://randomuser.me/api/portraits/men/45.jpg",
-    },
-    {
-      name: "Richardo Kann",
-      role: "Photogram",
-      message:
-        "Provide your business with a variety of digital solutions to promote your product or service online.",
-      image: "https://randomuser.me/api/portraits/men/54.jpg",
-    },
-  ];
+const testimonials = [
+  {
+    name: "Aarav Mehta",
+    img: "https://images.unsplash.com/photo-1618568949779-895d81686151?w=500&auto=format&fit=crop&q=60",
+    text: "Their team helped us design and develop a flawless mobile app for our business. The UI is clean, responsive, and the backend integration works perfectly. Highly professional and quick delivery!",
+  },
+  {
+    name: "Priya Sharma",
+    img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&auto=format&fit=crop&q=60",
+    text: "We hired them for our company website redesign. The new interface looks modern, loads super fast, and our leads have increased significantly since launch. Absolutely loved the creative approach!",
+  },
+  {
+    name: "Rahul Verma",
+    img: "https://images.unsplash.com/photo-1637684666772-1f215bfd0f5d?w=500&auto=format&fit=crop&q=60",
+    text: "Their digital team built a custom web dashboard for us that simplified our data management process. The experience was smooth, and communication was clear throughout the project.",
+  },
+  {
+    name: "Elena Dsouza",
+    img: "https://images.unsplash.com/photo-1656221010175-bcfeadcb6017?w=500&auto=format&fit=crop&q=60",
+    text: "We collaborated with them for our eCommerce app, and the results were beyond expectations. From design to deployment, everything was seamless and on time. Great support after launch too!",
+  },
+  {
+    name: "Vikram Patel",
+    img: "https://images.unsplash.com/photo-1603415526960-f7e0328f0e4b?w=500&auto=format&fit=crop&q=60",
+    text: "Their team delivered a fully functional CRM system that improved our workflow efficiency. The design is intuitive, and performance is excellent across devices. Definitely recommend them for IT solutions.",
+  },
+];
 
+const Testimonials = () => {
   return (
-    <section className="bg-[#fdf8f6] py-12 px-4 md:px-8 lg:px-16">
-      <div className="text-center mb-10">
-        <p className="text-sm text-[#000000] uppercase mb-2">Testimonials</p>
-        <h2 className="text-3xl font-bold text-black">
-          What Our Clients Are Saying
-        </h2>
-        <p className="text-gray-500 mt-3 max-w-xl mx-auto">
-            Our clients love our work in websites, apps & SEO. We deliver solutions that drive results.
+    <section className="w-full bg-white py-20 px-6 md:px-20">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
+        {/* Left Section */}
+        <div className="md:w-1/3">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4 leading-snug">
+            What <br /> Our Clients Say
+          </h2>
+          <p className="text-gray-500 leading-relaxed">
+            We’ve worked with amazing clients on web, app, and digital transformation projects. 
+            Here’s what they have to say about partnering with us.
           </p>
-      </div>
+        </div>
 
-      <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-6">
-        {testimonials.map((testimonial, index) => (
-          <div
-            key={index}
-            className="bg-white rounded-lg p-6 shadow-md border border-gray-100"
+        {/* Right Section */}
+        <div className="md:w-2/3 relative overflow-hidden">
+          <motion.div
+            className="flex gap-4"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{
+              ease: "linear",
+              duration: 25,
+              repeat: Infinity,
+            }}
           >
-            {/* Stars */}
-            <div className="flex space-x-1 mb-4 text-yellow-400">
-              {Array(5)
-                .fill(0)
-                .map((_, i) => (
-                  <Star key={i} size={20} fill="currentColor" />
-                ))}
-            </div>
-
-            {/* Message */}
-            <p className="text-black text-sm mb-6">{testimonial.message}</p>
-
-            {/* Profile */}
-            <div className="flex items-center space-x-4">
-              <img
-                src={testimonial.image}
-                alt={testimonial.name}
-                className="w-12 h-12 rounded-full object-cover"
-              />
-              <div>
-                <p className="font-semibold text-black">{testimonial.name}</p>
-                <p className="text-gray-600 text-sm">{testimonial.role}</p>
+            {[...testimonials, ...testimonials].map((t, i) => (
+              <div
+                key={i}
+                className="min-w-[220px] w-[220px] sm:min-w-[350px] sm:w-[350px] md:min-w-[240px] md:w-[340px] bg-white shadow-md rounded-2xl p-4 border border-gray-100 flex-shrink-0"
+              >
+                <span className="text-3xl text-pink-500 font-serif">"</span>
+                <p className="text-gray-600 text-xs sm:text-sm mt-2 leading-relaxed line-clamp-3">
+                  {t.text}
+                </p>
+                <div className="flex items-center gap-2 mt-4">
+                  <img
+                    src={t.img}
+                    alt={t.name}
+                    className="w-8 h-8 rounded-full object-cover flex-shrink-0"
+                  />
+                  <div className="min-w-0">
+                    <h4 className="font-semibold text-gray-800 text-xs sm:text-sm truncate">{t.name}</h4>
+                    <div className="flex text-yellow-400">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} size={10} fill="currentColor" />
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Button */}
-      <div className="text-center mt-8">
-        <button className="bg-[#3B82F6] text-white font-medium px-6 py-2 rounded-lg shadow hover:bg-blue-600 transition">
-          See All
-        </button>
+            ))}
+          </motion.div>
+        </div>
       </div>
     </section>
   );
 };
 
-export default Testimonial;
+export default Testimonials;

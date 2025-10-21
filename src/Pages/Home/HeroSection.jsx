@@ -1,5 +1,5 @@
 import React from "react";
-import heroImg from "../../assets/hero-bg.webp"; // apna image path yaha daalo
+import x from "../../assets/x.svg"; // apna image path yaha daalo
 
 const HeroSection = () => {
   return (
@@ -7,7 +7,7 @@ const HeroSection = () => {
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroImg})` }}
+        style={{ backgroundImage: `url(${x})` }}
       ></div>
 
       {/* Dark Overlay */}
@@ -22,14 +22,13 @@ const HeroSection = () => {
           We design websites, apps & SEO solutions tailored for your business. Also offering real-world internships for students.
         </p>
         <div className="flex flex-col md:flex-row gap-4 justify-center">
-          <button className="px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-full text-white font-medium transition">
+          <button 
+          onClick={() => navigate("/contact")}
+          className="px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-full text-white font-medium transition">
             Get Your Project Started
           </button>
           <button
-            onClick={() => {
-              const formSection = document.getElementById("apply-form");
-              formSection?.scrollIntoView({ behavior: "smooth" });
-            }}
+            onClick={() => navigate("/career")}
             className="px-6 py-3 bg-transparent border border-blue-400 hover:bg-blue-500 hover:text-white rounded-full text-blue-400 font-medium transition"
           >
             Apply for Internship
