@@ -32,23 +32,24 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="w-full bg-white py-20 px-6 md:px-20">
+    <section className="w-full bg-white py-16 px-4 sm:px-6 md:px-10 lg:px-20">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
+        
         {/* Left Section */}
-        <div className="md:w-1/3">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4 leading-snug">
-            What <br /> Our Clients Say
+        <div className="md:w-1/3 w-full text-center md:text-left">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 leading-snug">
+            What <br className="hidden sm:block" /> Our Clients Say
           </h2>
-          <p className="text-gray-500 leading-relaxed">
+          <p className="text-gray-500 text-sm sm:text-base leading-relaxed">
             We’ve worked with amazing clients on web, app, and digital transformation projects. 
             Here’s what they have to say about partnering with us.
           </p>
         </div>
 
-        {/* Right Section */}
-        <div className="md:w-2/3 relative overflow-hidden">
+        {/* Right Section (scrolling cards) */}
+        <div className="md:w-2/3 w-full relative overflow-hidden">
           <motion.div
-            className="flex gap-4"
+            className="flex gap-6"
             animate={{ x: ["0%", "-50%"] }}
             transition={{
               ease: "linear",
@@ -59,23 +60,26 @@ const Testimonials = () => {
             {[...testimonials, ...testimonials].map((t, i) => (
               <div
                 key={i}
-                className="min-w-[220px] w-[220px] sm:min-w-[350px] sm:w-[350px] md:min-w-[240px] md:w-[340px] bg-white shadow-md rounded-2xl p-4 border border-gray-100 flex-shrink-0"
+                className="flex-shrink-0 w-[260px] sm:w-[320px] md:w-[360px] lg:w-[380px] bg-white shadow-lg rounded-2xl p-5 border border-gray-100"
               >
                 <span className="text-3xl text-pink-500 font-serif">"</span>
-                <p className="text-gray-600 text-xs sm:text-sm mt-2 leading-relaxed line-clamp-3">
+                <p className="text-gray-600 text-sm sm:text-base mt-2 leading-relaxed line-clamp-4">
                   {t.text}
                 </p>
-                <div className="flex items-center gap-2 mt-4">
+
+                <div className="flex items-center gap-3 mt-5">
                   <img
                     src={t.img}
                     alt={t.name}
-                    className="w-8 h-8 rounded-full object-cover flex-shrink-0"
+                    className="w-10 h-10 rounded-full object-cover"
                   />
-                  <div className="min-w-0">
-                    <h4 className="font-semibold text-gray-800 text-xs sm:text-sm truncate">{t.name}</h4>
+                  <div>
+                    <h4 className="font-semibold text-gray-800 text-sm sm:text-base">
+                      {t.name}
+                    </h4>
                     <div className="flex text-yellow-400">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} size={10} fill="currentColor" />
+                        <Star key={i} size={14} fill="currentColor" />
                       ))}
                     </div>
                   </div>

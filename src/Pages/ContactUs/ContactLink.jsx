@@ -15,7 +15,7 @@ const ContactLink = () => {
           <p className="uppercase text-sm tracking-widest text-red-400 mb-1">
             Phone
           </p>
-          <p className="text-gray-800">+1 (234) 567-89-00</p>
+          <p className="text-gray-800">+91 8077073053</p>
         </div>
 
         {/* Email */}
@@ -26,7 +26,7 @@ const ContactLink = () => {
           <p className="uppercase text-sm tracking-widest text-red-400 mb-1">
             Email
           </p>
-          <p className="text-gray-800">info@agency.com</p>
+          <p className="text-gray-800">stackadda@gmail.com</p>
         </div>
 
         {/* Address */}
@@ -38,7 +38,7 @@ const ContactLink = () => {
             Address
           </p>
           <p className="text-gray-800 text-center">
-            2247 Lunetta Street, TX 76301
+            StackAdda , No 123, 2nd Floor, 70th Cross, 5th Block, Rajaji Nagara, Bengaluru, Karnataka 560010
           </p>
         </div>
       </div>
