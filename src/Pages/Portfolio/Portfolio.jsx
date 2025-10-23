@@ -13,8 +13,8 @@ const Portfolio = () => {
   return (
     <>
       <SEO
-        title="Creative Stack - Portfolio"
-        description="Explore our React, WordPress, Flutter, and SEO projects."
+        title="Stack Adda Portfolio | Global App, Web & UI/UX Design Projects"
+        description="Explore Stack Adda’s portfolio of successful web, mobile, and UI/UX design projects for global clients. See how we transform ideas into high-performing digital experiences."
       />
       <PortfolioHero scrollToForm={scrollToForm}/>
       <div ref={formRef}>

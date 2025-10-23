@@ -41,7 +41,7 @@ const Navbar = () => {
     <>
       {/* NAVBAR */}
       <nav className="fixed top-0 left-0 w-full z-50 bg-black/90 shadow-lg border-b border-black/30 backdrop-blur-md">
-        <div className="max-w-7xl mx-auto px-8 py-5 md:py-6 flex justify-between items-center">
+        <div className="max-w-7xl mx-auto px-8 py-7 md:py-6  flex justify-between items-center">
           {/* Logo */}
           <Link
             to="/"

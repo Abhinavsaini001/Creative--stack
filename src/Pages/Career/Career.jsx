@@ -16,8 +16,8 @@ const Career = () => {
   return (
     <div>
       <SEO
-        title="Creative Stack - Portfolio"
-        description="Explore our React, WordPress, Flutter, and SEO projects."
+        title="Careers at Stack Adda | IT Internships & Tech Jobs in India"
+        description="Kickstart your tech career with Stack Adda! Apply for internships in web development, app development, UI/UX design, and AI/ML. Learn, grow, and build real-world projects."
       />
       <HeroSection scrollToForm={scrollToForm} />
       <InternshipSection />

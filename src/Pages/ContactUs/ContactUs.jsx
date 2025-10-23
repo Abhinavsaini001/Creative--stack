@@ -16,8 +16,8 @@ const ContactUs = () => {
   return (
     <>
       <SEO
-        title="Creative Stack - Portfolio"
-        description="Explore our React, WordPress, Flutter, and SEO projects."
+        title="Contact Stack Adda | Hire Expert Web & App Developers Globally"
+        description="Looking for a trusted tech partner? Connect with Stack Adda to discuss your project needs. We deliver custom app & web development solutions to clients across the world."
       />
       <ContactHero scrollToForm={scrollToForm}/>
       <div ref={formRef}>

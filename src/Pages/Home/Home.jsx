@@ -13,8 +13,8 @@ const Home = () => {
   return (
     <>
       <SEO
-        title="Creative Stack - Portfolio"
-        description="Explore our React, WordPress, Flutter, and SEO projects."
+        title="Stack Adda | Custom Web & Mobile App Development Company Worldwide"
+        description="Grow your business with Stack Adda — a global app & web development company delivering custom, scalable, and secure digital solutions. Let’s turn your ideas into powerful products."
       />
       <HeroSection />
       <Services />

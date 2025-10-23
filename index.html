@@ -1,12 +1,71 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- ✅ Basic Meta Tags -->
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>StackAdda</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- ✅ Title (fallback, Helmet will override per-page) -->
+    <title>Stack Adda | Custom Web & App Development Company</title>
+    <meta name="description" content="Stack Adda is a global technology company delivering custom web and mobile app solutions, UI/UX design, and digital transformation services worldwide." />
+
+    <!-- ✅ Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icon.svg" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- ✅ Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ✅ Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Stack Adda | Custom Web & App Development Company" />
+    <meta property="og:description" content="We build scalable web and mobile solutions for global businesses — Stack Adda combines creativity with technology for outstanding results." />
+    <meta property="og:image" content="https://stackadda.com/og-image.jpg" />
+    <meta property="og:url" content="https://stackadda.com/" />
+    <meta property="og:site_name" content="Stack Adda" />
+
+    <!-- ✅ Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Stack Adda | Global Web & App Development" />
+    <meta name="twitter:description" content="Transform your ideas into reality with Stack Adda’s custom app and web development services for global clients." />
+    <meta name="twitter:image" content="https://stackadda.com/og-image.jpg" />
+
+    <!-- ✅ Canonical URL -->
+    <link rel="canonical" href="https://stackadda.com/" />
+
+    <!-- ✅ Theme color for mobile browsers -->
+    <meta name="theme-color" content="#000000" />
+
+    <!-- ✅ Robots -->
+    <meta name="robots" content="index, follow" />
+
+    <!-- ✅ Performance & SEO extras -->
+    <meta name="author" content="Stack Adda" />
+    <meta name="keywords" content="custom web development, app development company, UI UX design agency, software development, global IT company" />
+
+    <!-- ✅ Schema.org (optional JSON-LD for rich results) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Stack Adda",
+      "url": "https://stackadda.com",
+      "logo": "https://stackadda.com/icon.svg",
+      "sameAs": [
+        "https://www.linkedin.com/company/stackadda",
+        "https://www.instagram.com/stackadda",
+        "https://twitter.com/stackadda"
+      ],
+      "description": "Stack Adda is a global IT company providing custom web, mobile app, and UI/UX design solutions."
+    }
+    </script>
   </head>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
